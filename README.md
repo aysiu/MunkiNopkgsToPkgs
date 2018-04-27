@@ -8,8 +8,8 @@ This script was created for a specific use case: to convert [printer nopkg Munki
 The script operates on some assumptions that make perfect sense for this particular use case (for example, that there is an uninstall_script, which there doesn't always have to be for a nopkg or that version numbers will be actual numbers instead of a combination of words and numbers). There is not a comprehensive set of sanity checks for key's existences or an easy way to resolve errors interactively (the script just exits with an error message if, for example, it's looking for a particular executable or directory and doesn't find it).
 
 ## Requirements
-  *You need [Munki tools](https://github.com/munki/munki/releases/latest) installed on whatever machine is running this script, because it makes use of munkiimport and makecatalogs
-  *There are many ways to build packages in macOS. This script relies on [Munki-Pkg](https://github.com/munki/munki-pkg) to do so.
+* You need [Munki tools](https://github.com/munki/munki/releases/latest) installed on whatever machine is running this script, because it makes use of munkiimport and makecatalogs
+* There are many ways to build packages in macOS. This script relies on [Munki-Pkg](https://github.com/munki/munki-pkg) to do so.
 
 ## Fork away!
 If you would like to adapt this to be more foolproof for multiple situations, feel free to fork and/or provide pull requests. My initial goal here is not to create an all-purpose nopkg-to-pkg conversion script but to just help myself in this particular situation. That said, if people found a use for this script and wanted to adapt it to other nopkg-conversion scenarios, it's open source. Go for it!
