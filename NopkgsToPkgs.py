@@ -4,7 +4,6 @@ import os
 import plistlib
 import subprocess
 import sys
-import time
 
 ##################################################################
 ### Parameters to definitely change before running this script ###
@@ -103,8 +102,8 @@ def main():
 								# Import with munkiimport but non-interactively
 								cmd = [ munkiimport, newpkg, displayname, '--unattended_uninstall', '--nointeractive', '--unattended_install', category, developer, preuninstall_script, pkgvers, itemname ]
 								proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-								# Wait a few seconds, so there aren't too many open subprocesses
-								time.sleep(3)
+								# Wait until subprocess is done
+								proc.wait()
 							else:
 								print "Error: %s is not a valid path to munkiimport" % munkiimport
 								sys.exit(1)
